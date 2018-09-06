@@ -1,0 +1,8 @@
+<a href="post/new">글쓰기</a> <br>
+<h2>제목</h2> <br>
+<% @posts.each do |x| %>
+	<a href="/show/<%=x.id%>"><%=x.title%> |</a>
+	<a href="/destroy/<%=x.id%>">삭제</a>
+<% end %>
+
+	

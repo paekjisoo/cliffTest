@@ -1,0 +1,13 @@
+제목 : <%=@thispost.title%><br>
+내용 : <%=@thispost.content%><br>
+<a href="/post/index">목록으로</a><br>
+----------------------------------<br>
+	<% @thispost.comments.each do |x|%>
+	 > <%= x.content %><br>
+	<%end%>
+
+<%= form_for @newcomment, url: "/post/#{@thispost.id}/commentcreate" do |f| %>
+	Content :
+	<input type="text" name="ccontent"><br>
+	<input type="submit" value="Create Comment">
+<%end%>

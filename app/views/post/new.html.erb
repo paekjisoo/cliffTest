@@ -1,0 +1,15 @@
+<!-- <form action="/create" method="post">
+	<p>Title</p>
+	<input type="text" name="input_title"><br>
+
+	<p>Content</p>
+	<input type="text" name="input_content"><br>
+
+	<input type="submit" value="Create Post">
+</form> -->
+
+<%= form_for @posts, url: "/create" do |k| %>
+	Title : <%=k.text_field :title %><br>
+	Content : <%=k.text_area :content %><br>
+	<%=k.submit%>
+<%end%>
